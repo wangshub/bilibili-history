@@ -1,4 +1,5 @@
-import os
+import json
+import requests
 
 
 def read_cookies_file(filename):
@@ -12,7 +13,7 @@ def read_cookies_file(filename):
         return cookies
 
 
-def get(filename):
+def get_header(filename):
     cookie = read_cookies_file(filename)
     headers = {
         'Accept': '*/*',
@@ -22,6 +23,12 @@ def get(filename):
         'Cookie': cookie,
         'Host': 'api.bilibili.com',
         'Referer': 'https://www.bilibili.com/account/history',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 '
+                      '(KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
     }
     return headers
+
+
+def req_get(headers, url):
+    resp = requests.get(url, headers=headers)
+    return json.loads(resp.text)
