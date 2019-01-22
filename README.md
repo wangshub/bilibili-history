@@ -23,7 +23,7 @@
 
 ![](https://ws1.sinaimg.cn/large/c3a916a7gy1fzfkc5s8scj21ga0nok4i.jpg)
 
-5. 将 Header 下， cookie 一行的字符串复制出来到一个 `cookie.txt` 文本里
+5. 将 Header 下， cookie 一行的字符串复制出来到一个 `cookies.txt` 文本里
 
 ![](https://ws1.sinaimg.cn/large/c3a916a7gy1fzfkkj1adsj20ta07ita2.jpg)
 
